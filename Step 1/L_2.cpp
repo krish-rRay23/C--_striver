@@ -89,8 +89,12 @@ void pattern9(int n){
     }
 }
 void pattern10(int n){
-    pattern1(n);
-    pattern5(n);
+        for(int i=0;i<=(2*n-1);i++){
+        for(int j=0;j<((i<=n)?(i):(2*n-i));j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
 }
 void pattern11(int n){
     for(int i=0;i<n;i++){
@@ -105,59 +109,77 @@ void pattern11(int n){
     }
 }
 void pattern12(int n){
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=2*n-1; j++){
-            if(j <= i || j >= 2*n-i){
-                cout << min(j, 2*n-j);
-            } else {
-                cout << " ";
-            }
-        }
-        cout << endl;
-    }
+    int spaces = 2*(n-1);
+      for(int i=1;i<=n;i++){
+          for(int j=1;j<=i;j++){
+              cout<<j;
+          }
+          for(int j = 1;j<=spaces;j++){
+              cout<<" ";
+          }
+          for(int j=i;j>=1;j--){
+              cout<<j;
+          }
+          cout<<endl;
+          spaces-=2;
+      }
 }
 void pattern13(int n){
-    int num=1;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){
-            cout<<num<<" ";
-            num+=1;
-        }
-        cout<<endl;
+    int count =1;
+    for(int i=0;i<=n;i++){
+      for (int j = 0; j < i; j++) {
+        cout << count << " ";
+        count++;
+      }
+      cout<<endl;
     }
 }
 void pattern14(int n){
-    char c='A';
-    for(int i=1;i<=n;i++){
-        for(char j=65;j<65+i;j++){
-            cout<<j<<" ";
-            
+    for(int i=0;i<=n;i++){
+        char c ='A';
+        for(int j=0;j<i;j++){
+            cout<<c<<" ";
+            c++;
         }
         cout<<endl;
     }
 }
 void pattern15(int n){
-    char c='A';
-    for(int i=1;i<=n;i++){
-            for(char j=65;j<65+n-i+1;j++){
-            cout<<j<<" ";
-            }
+    for(int i=0;i<=n;i++){
+        char c = 'A';
+        for(int j=n;j>i;j--){
+            cout<<c<<" ";
+            c++;
+        }
         cout<<endl;
     }
 }
 void pattern16(int n){
-    char c='A';
-    for(int i=1;i<=n;i++){
-            for(char j=65;j<65+i;j++){
+        char c = 'A';
+        for(int i=0;i<n;i++){
+        
+        for(int j=0;j<=i;j++){
             cout<<c<<" ";
-            }
-        c+=1;
+        }
+        c++;
         cout<<endl;
     }
 }
-
+void pattern17(int n) {
+    int l = n/2+1;
+    for(int i=1;i<=n;i++){
+        char c = 'A';
+        for(int j=n;j>=i;j--){
+            cout<<" ";
+        }
+        for(int j=0;j<i;j++){
+            cout<<c<<" ";
+        }
+        cout<<endl;
+    }
+}
 int main(){
-    int n=5;
-    pattern12(n);
+    int n=3;
+    pattern17(n);
     return 0;
 }

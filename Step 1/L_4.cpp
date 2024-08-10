@@ -86,16 +86,20 @@ void DivisorList(int n){
 
 //      Prime No
 void CheckPrime(int n){
-    int flag=0;
-    for(int i=1;i<=n;i++){
+   int count=0;
+   for(int i=1;i*i<n;i++){
         if(n%i==0){
-            flag++;
-    }
-    }
-    if(flag==2){
-            cout<<"Prime";
+            count++;
+            if(n/i!=0){
+                count++;
+            }
+        }}
+        if(count==2){
+            cout<<"prime";
         }
-        else cout<<"Not prime ";
+        else{
+            cout<<"not prime";
+        }
 }
 
 int main(){
