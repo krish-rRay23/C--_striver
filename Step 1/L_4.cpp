@@ -102,15 +102,26 @@ void CheckPrime(int n){
         }
 }
 
+int gcd(int n,int m){
+    for(int i=min(n,m);i>0;i--){
+        if(n%i==0 && m%i==0){
+            return i;
+        }
+    return 1;
+    }
+}
+
 int main(){
-    int n;
-    cout<<"enter number ";
+    int n,m;
+    cout<<"enter 2 numbers : ";
     cin>>n;
+    cin>>m;
     sumdigits(n);
     rev_num(n);
     palindrome(n);
     armstrong(n);
     divisors(n); 
     CheckPrime(n);
+    cout<<endl<<gcd(n,m);
     return 0;
 }
